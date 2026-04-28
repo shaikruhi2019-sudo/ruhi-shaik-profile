@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ruhi Shaik – LinkedIn Profile</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0a0a0f;
+    --teal: #0e7490;
+    --teal-light: #cffafe;
+    --teal-mid: #06b6d4;
+    --cream: #faf9f6;
+    --muted: #6b7280;
+    --border: #e5e7eb;
+    --card: #ffffff;
+    --shadow: 0 1px 3px rgba(0,0,0,0.08), 0 4px 16px rgba(0,0,0,0.06);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 0;
+  }
+
+  /* BANNER */
+  .banner {
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(135deg, #0e7490 0%, #0891b2 40%, #164e63 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .banner::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 40px,
+      rgba(255,255,255,0.04) 40px,
+      rgba(255,255,255,0.04) 80px
+    );
+  }
+  .banner-dots {
+    position: absolute; inset: 0;
+    background-image: radial-gradient(circle, rgba(255,255,255,0.12) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
+  /* LAYOUT */
+  .page-wrapper {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 16px 48px;
+  }
+
+  /* PROFILE CARD */
+  .profile-card {
+    background: var(--card);
+    border-radius: 0 0 16px 16px;
+    box-shadow: var(--shadow);
+    padding: 0 32px 28px;
+    position: relative;
+    animation: fadeUp 0.5s ease both;
+  }
+
+  .avatar-wrap {
+    position: relative;
+    display: inline-block;
+    margin-top: -56px;
+  }
+  .avatar {
+    width: 112px;
+    height: 112px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    background: linear-gradient(135deg, #0e7490, #06b6d4);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'DM Serif Display', serif;
+    font-size: 2.8rem;
+    color: white;
+    letter-spacing: -1px;
+    box-shadow: 0 4px 16px rgba(14,116,144,0.3);
+  }
+  .online-dot {
+    width: 18px; height: 18px;
+    background: #22c55e;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    position: absolute; bottom: 6px; right: 6px;
+  }
+
+  .profile-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.85rem;
+    color: var(--ink);
+    margin-top: 10px;
+    letter-spacing: -0.5px;
+  }
+  .headline {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-top: 4px;
+    font-weight: 400;
+    line-height: 1.5;
+    max-width: 520px;
+  }
+  .location-line {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 8px;
+    font-size: 0.85rem;
+    color: var(--teal);
+    font-weight: 500;
+  }
+
+  .btn-row {
+    display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px;
+  }
+  .btn-primary {
+    background: var(--teal);
+    color: white;
+    padding: 8px 22px;
+    border-radius: 24px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-primary:hover { background: #0e6580; transform: translateY(-1px); }
+  .btn-outline {
+    background: transparent;
+    color: var(--teal);
+    padding: 8px 20px;
+    border-radius: 24px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    border: 1.5px solid var(--teal);
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    transition: all 0.2s;
+  }
+  .btn-outline:hover { background: var(--teal-light); }
+
+  /* STATS ROW */
+  .stats-row {
+    display: flex;
+    gap: 0;
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+  }
+  .stat {
+    flex: 1;
+    text-align: center;
+    padding: 0 8px;
+    border-right: 1px solid var(--border);
+  }
+  .stat:last-child { border-right: none; }
+  .stat-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.4rem;
+    color: var(--teal);
+  }
+  .stat-label {
+    font-size: 0.75rem;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+
+  /* CARDS */
+  .section-card {
+    background: var(--card);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    padding: 28px 32px;
+    margin-top: 16px;
+    animation: fadeUp 0.5s ease both;
+  }
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.15rem;
+    color: var(--ink);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-title svg { color: var(--teal); }
+
+  /* ABOUT */
+  .about-text {
+    font-size: 0.92rem;
+    line-height: 1.75;
+    color: #374151;
+  }
+
+  /* EXPERIENCE */
+  .exp-item {
+    display: flex;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .exp-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .exp-item:first-of-type { padding-top: 0; }
+
+  .exp-logo {
+    width: 48px; height: 48px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #0e7490, #0891b2);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    font-size: 1.2rem;
+    color: white;
+  }
+
+  .exp-info { flex: 1; }
+  .exp-title {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--ink);
+  }
+  .exp-company {
+    font-size: 0.87rem;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+  .exp-date {
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+  .exp-bullets {
+    list-style: none;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .exp-bullets li {
+    font-size: 0.875rem;
+    color: #374151;
+    line-height: 1.5;
+    padding-left: 14px;
+    position: relative;
+  }
+  .exp-bullets li::before {
+    content: '▸';
+    position: absolute; left: 0;
+    color: var(--teal);
+    font-size: 0.75rem;
+    top: 2px;
+  }
+
+  /* SKILLS */
+  .skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .skill-chip {
+    background: var(--teal-light);
+    color: #0e4f5c;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: 1px solid #a5f3fc;
+    transition: all 0.2s;
+    cursor: default;
+  }
+  .skill-chip:hover {
+    background: var(--teal);
+    color: white;
+    border-color: var(--teal);
+    transform: translateY(-1px);
+  }
+  .skill-chip.soft {
+    background: #f0fdf4;
+    color: #166534;
+    border-color: #bbf7d0;
+  }
+  .skill-chip.soft:hover {
+    background: #16a34a;
+    color: white;
+    border-color: #16a34a;
+  }
+
+  /* EDUCATION */
+  .edu-item {
+    display: flex;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .edu-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .edu-icon {
+    width: 44px; height: 44px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #164e63, #0e7490);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    font-size: 1.1rem;
+  }
+  .edu-degree { font-weight: 600; font-size: 0.92rem; color: var(--ink); }
+  .edu-school { font-size: 0.85rem; color: var(--muted); margin-top: 2px; }
+  .edu-year { font-size: 0.8rem; color: var(--muted); margin-top: 2px; }
+
+  /* PROJECTS */
+  .project-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  @media (max-width: 600px) { .project-grid { grid-template-columns: 1fr; } }
+  .project-card {
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    padding: 18px;
+    transition: all 0.25s;
+    cursor: default;
+    background: #fafcff;
+  }
+  .project-card:hover {
+    border-color: var(--teal-mid);
+    box-shadow: 0 4px 16px rgba(14,116,144,0.12);
+    transform: translateY(-2px);
+  }
+  .project-tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--teal);
+    background: var(--teal-light);
+    border-radius: 6px;
+    padding: 2px 8px;
+    margin-bottom: 8px;
+  }
+  .project-name {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--ink);
+    line-height: 1.4;
+  }
+  .project-desc {
+    font-size: 0.82rem;
+    color: var(--muted);
+    margin-top: 6px;
+    line-height: 1.5;
+  }
+
+  /* CONTACT */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  @media (max-width: 500px) { .contact-grid { grid-template-columns: 1fr; } }
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--cream);
+    border-radius: 10px;
+    padding: 12px 16px;
+    font-size: 0.875rem;
+    color: var(--ink);
+    text-decoration: none;
+    transition: all 0.2s;
+    border: 1px solid var(--border);
+  }
+  .contact-item:hover {
+    background: var(--teal-light);
+    border-color: var(--teal-mid);
+    color: var(--teal);
+  }
+  .contact-icon {
+    width: 36px; height: 36px;
+    border-radius: 8px;
+    background: var(--teal);
+    display: flex; align-items: center; justify-content: center;
+    color: white;
+    flex-shrink: 0;
+    font-size: 1rem;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .section-card:nth-child(2) { animation-delay: 0.05s; }
+  .section-card:nth-child(3) { animation-delay: 0.1s; }
+  .section-card:nth-child(4) { animation-delay: 0.15s; }
+  .section-card:nth-child(5) { animation-delay: 0.2s; }
+  .section-card:nth-child(6) { animation-delay: 0.25s; }
+</style>
+</head>
+<body>
+
+<div class="banner"><div class="banner-dots"></div></div>
+
+<div class="page-wrapper">
+
+  <!-- PROFILE CARD -->
+  <div class="profile-card">
+    <div class="profile-top">
+      <div>
+        <div class="avatar-wrap">
+          <div class="avatar">RS</div>
+          <div class="online-dot"></div>
+        </div>
+        <div class="name">Ruhi Shaik</div>
+        <div class="headline">Python Developer · Machine Learning · Computer Vision · CS Engineering Student graduating July 2026</div>
+        <div class="location-line">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          Kukatpally, Hyderabad, India
+        </div>
+        <div class="btn-row">
+          <button class="btn-primary">+ Connect</button>
+          <button class="btn-outline">Message</button>
+          <button class="btn-outline">Download CV</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat">
+        <div class="stat-num">2</div>
+        <div class="stat-label">Internships</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">3</div>
+        <div class="stat-label">Projects</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">7+</div>
+        <div class="stat-label">Tech Skills</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">2026</div>
+        <div class="stat-label">Graduating</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <div class="section-card">
+    <div class="section-title">
+      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+      About
+    </div>
+    <p class="about-text">
+      I'm a final-year Computer Science Engineering student with a strong foundation in Python, machine learning, and backend development. I've built real-world systems — from an ML-powered inventory forecasting engine using LSTM, XGBoost, and Random Forest, to a deep learning sign language detector that improves accessibility for hearing-impaired individuals.
+      <br><br>
+      During my internship on a Yacht Booking Application, I worked across the full backend stack — Python, MySQL, Git — and collaborated in Agile Scrum sprints. I bring both technical depth and a genuine desire to solve problems that matter.
+      <br><br>
+      🎯 Actively seeking entry-level roles in Software Engineering, ML Engineering, or Python Development where I can contribute, learn, and grow.
+    </p>
+  </div>
+
+  <!-- EXPERIENCE -->
+  <div class="section-card">
+    <div class="section-title">
+      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+      Experience
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-logo">🛥️</div>
+      <div class="exp-info">
+        <div class="exp-title">Python Developer Intern</div>
+        <div class="exp-company">Yacht Booking Application</div>
+        <div class="exp-date">Oct 2025 – Jan 2026 · 4 months · Hyderabad, India</div>
+        <ul class="exp-bullets">
+          <li>Contributed to development and maintenance of a yacht booking web application in a collaborative team environment.</li>
+          <li>Supported backend development using Python — implemented booking workflows and input validation.</li>
+          <li>Managed and updated user and booking data using MySQL.</li>
+          <li>Participated in Agile Scrum practices: daily stand-ups, sprint planning, and task tracking.</li>
+          <li>Assisted in debugging and improving application stability; used Git for version control.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-logo">📦</div>
+      <div class="exp-info">
+        <div class="exp-title">Machine Learning Intern</div>
+        <div class="exp-company">Smart Inventory Forecasting System</div>
+        <div class="exp-date">Oct 2025 – Jan 2026 · 4 months</div>
+        <ul class="exp-bullets">
+          <li>Developed an intelligent inventory prediction system using LSTM, XGBoost, and Random Forest algorithms.</li>
+          <li>Integrated MySQL database to store and manage historical inventory data.</li>
+          <li>Built automated alerts to prevent stock shortages and optimize inventory levels.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECTS -->
+  <div class="section-card">
+    <div class="section-title">
+      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+      Projects
+    </div>
+    <div class="project-grid">
+      <div class="project-card">
+        <span class="project-tag">Machine Learning</span>
+        <div class="project-name">Smart Inventory Forecasting System</div>
+        <div class="project-desc">ML-powered demand prediction using LSTM, XGBoost & Random Forest with MySQL backend and automated stock alerts.</div>
+      </div>
+      <div class="project-card">
+        <span class="project-tag">Deep Learning</span>
+        <div class="project-name">Sign Language Detection</div>
+        <div class="project-desc">Deep learning model using computer vision to recognize hand gestures for sign language — improving accessibility for the hearing-impaired.</div>
+      </div>
+      <div class="project-card">
+        <span class="project-tag">Web App</span>
+        <div class="project-name">Yacht Booking Application</div>
+        <div class="project-desc">Collaborative Python-based web app with booking workflows, input validation, and MySQL data management.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SKILLS -->
+  <div class="section-card">
+    <div class="section-title">
+      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+      Skills
+    </div>
+    <p style="font-size:0.8rem;color:var(--muted);margin-bottom:10px;font-weight:500;text-transform:uppercase;letter-spacing:0.05em;">Technical</p>
+    <div class="skills-grid" style="margin-bottom:16px;">
+      <span class="skill-chip">Python</span>
+      <span class="skill-chip">MySQL</span>
+      <span class="skill-chip">Machine Learning</span>
+      <span class="skill-chip">Deep Learning</span>
+      <span class="skill-chip">LSTM</span>
+      <span class="skill-chip">XGBoost</span>
+      <span class="skill-chip">Random Forest</span>
+      <span class="skill-chip">Computer Vision</span>
+      <span class="skill-chip">Git / GitHub</span>
+      <span class="skill-chip">VS Code</span>
+      <span class="skill-chip">C (Entry Level)</span>
+    </div>
+    <p style="font-size:0.8rem;color:var(--muted);margin-bottom:10px;font-weight:500;text-transform:uppercase;letter-spacing:0.05em;">Soft Skills</p>
+    <div class="skills-grid">
+      <span class="skill-chip soft">Teamwork</span>
+      <span class="skill-chip soft">Communication</span>
+      <span class="skill-chip soft">Time Management</span>
+      <span class="skill-chip soft">Adaptability</span>
+      <span class="skill-chip soft">Critical Thinking</span>
+    </div>
+  </div>
+
+  <!-- EDUCATION -->
+  <div class="section-card">
+    <div class="section-title">
+      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+      Education
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-icon">🎓</div>
+      <div>
+        <div class="edu-degree">B.Tech – Computer Science Engineering</div>
+        <div class="edu-school">Gokaraju Lailavathi Engineering College, Hyderabad</div>
+        <div class="edu-year">May 2022 – July 2026</div>
+      </div>
+    </div>
+    <div class="edu-item">
+      <div class="edu-icon">📘</div>
+      <div>
+        <div class="edu-degree">MPC (Maths, Physics, Chemistry)</div>
+        <div class="edu-school">Sri Gayatri Jr College</div>
+        <div class="edu-year">Jan 2020 – Jan 2022</div>
+      </div>
+    </div>
+    <div class="edu-item">
+      <div class="edu-icon">🏫</div>
+      <div>
+        <div class="edu-degree">CBSE – Secondary School</div>
+        <div class="edu-school">Pragathi Central School</div>
+        <div class="edu-year">Sept 2020</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="section-card">
+    <div class="section-title">
+      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l.91-.92a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Contact & Links
+    </div>
+    <div class="contact-grid">
+      <a class="contact-item" href="mailto:Shaikruhi165@gmail.com">
+        <div class="contact-icon">✉️</div>
+        <div>
+          <div style="font-size:0.75rem;color:var(--muted);margin-bottom:2px;">Email</div>
+          Shaikruhi165@gmail.com
+        </div>
+      </a>
+      <a class="contact-item" href="tel:+918247691197">
+        <div class="contact-icon">📱</div>
+        <div>
+          <div style="font-size:0.75rem;color:var(--muted);margin-bottom:2px;">Phone</div>
+          +91 82476 91197
+        </div>
+      </a>
+      <a class="contact-item" href="https://www.linkedin.com/in/ruhi-shaik-601a35370" target="_blank">
+        <div class="contact-icon">💼</div>
+        <div>
+          <div style="font-size:0.75rem;color:var(--muted);margin-bottom:2px;">LinkedIn</div>
+          ruhi-shaik-601a35370
+        </div>
+      </a>
+      <a class="contact-item" href="https://github.com/ruhi-shaik" target="_blank">
+        <div class="contact-icon">🐙</div>
+        <div>
+          <div style="font-size:0.75rem;color:var(--muted);margin-bottom:2px;">GitHub</div>
+          github.com/ruhi-shaik
+        </div>
+      </a>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
